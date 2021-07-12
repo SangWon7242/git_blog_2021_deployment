@@ -8,11 +8,10 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
 <section class="secion-article-write">
   <div class="container mx-auto">
     <div class="con-pad">
-			<div class="btns">
-				<a href="list" type="submit" class="btn btn-link">글 리스트</a>
-				<a href="detail?id=<?=$id?>" type="submit" class="btn btn-link">원문</a>
-			</div>
-
+      <div class="btns">
+        <a href="list" class="btn btn-link">글 리스트</a>
+        <a href="detail?id=<?=$id?>"  class="btn btn-link">원문</a>
+      </div>
       <hr>
       <script>
       let ArticleDoModify__submitFormDone = false;
@@ -45,41 +44,41 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
       }
       </script>
       <form action="doModify" method="POST" onsubmit="ArticleDoModify__submitForm(this); return false;">
-      <input type="hidden" name="id" value="<?=$article['id']?>"> 
-      <input type="hidden" name="body">
+        <input type="hidden" name="id" value="<?=$article['id']?>"> 
+        <input type="hidden" name="body"> 
+        
 
-			<div class="form-control">
-					<label class="label">
-						<span class="label-text">
-							번호							
-						</span>				
-					</label>
-					<div>
-						<div class="badge badge-primary"><?=$article['id']?></div>
-					</div>
-				</div>
-
-				<div class="form-control">
-					<label class="label">
-						<span class="label-text">제목</span>
-					</label>
-          <input class="input input-boardered" required placeholder="제목을 입력해주세요." type="text" name="title" value="<?=$article['title']?>"> 
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">
+              번호
+            </span>
+          </label>
+          <div>
+            <div class="badge badge-primary"><?=$article['id']?></div>
+          </div>
         </div>
 
         <div class="form-control">
-					<label class="label">
-						<span class="label-text">내용</span>
-					</label>          
+          <label class="label">
+            <span class="label-text">제목</span>
+          </label>
+          <input class="input input-bordered" required placeholder="제목을 입력해주세요." type="text" name="title" value="<?=$article['title']?>"> 
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">내용</span>
+          </label>
+          
           <script type="text/x-template"><?=ToastUiEditor__getSafeSource($article['body'])?></script>
           <div class="toast-ui-editor input-body"></div>
         </div>
         <div>
-           <div>
-					<div class="btns">
+          <div class="btns">
 						<button type="submit" class="btn btn-link">수정</button>
-						<button onclick="history.back();" type="button" class="btn btn-link">수정취소</button> 
+						<button onclick="history.back();" type="button" class="btn btn-link">수정취소</button>
 					</div>
-        </div>
         </div>
       </form>
     </div>

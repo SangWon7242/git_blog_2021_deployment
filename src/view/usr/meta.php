@@ -3,7 +3,7 @@ if (!isset($meta)) {
   $meta = [];
 }
 
-$meta['siteName'] = "Wonny IT BLOG";
+$meta['siteName'] = "SITE2 BLOG";
 $meta['siteCanonicalUrl'] = $_SERVER['REQUEST_URI'];
 $meta['siteKeywords'] = "IT, Java, PHP, HTML, CSS, Javascript, VUE, IONIC, MySQL, Linux";
 
@@ -12,11 +12,11 @@ if (!isset($meta['pageGenDate'])) {
 }
 
 if (!isset($meta['siteSubject'])) {
-  $meta['siteSubject'] = "코린이의 IT 전문 블로그, Wonny IT BLOG";
+  $meta['siteSubject'] = "코린이의 코린이를 위한 IT 전문 블로그";
 }
 
 if (!isset($meta['siteDescription'])) {
-  $meta['siteDescription'] = "코린이의 IT 전문 블로그. JUST DO IT & DONT'T GIVE UP.";
+  $meta['siteDescription'] = "코린이의 코린이를 위한 IT 블로그 입니다. Just Do It!";
 }
 
 if (!isset($meta['og:title'])) {

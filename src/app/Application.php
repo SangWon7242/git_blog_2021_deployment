@@ -9,33 +9,49 @@ use App\Interceptor\NeedLogoutInterceptor;
 
 class Application
 {
-    public static function getInstance(): Application
+    function getTempSitemapFilePath(): string
     {
-        static $instance;
+        $envCode = $this->getEnvCode();
 
-        if ($instance === null) {
-            $instance = new Application();
+        $dir = "";
+
+        if ($envCode == 'dev') {
+            $dir = "C:/temp";
+        } else {
+            $dir = "/tmp";
         }
 
-        return $instance;
-    }
+        if (!is_dir($dir)) {
+            mkdir($dir);
+        }
 
-    private function __construct()
-    {
+        $filePath = $dir . "/{$this->getProdSiteDomain()}__sitemap.xml";
+
+        return $filePath;
     }
 
     function getEnvCode(): string
     {
-        if ($_SERVER['DOCUMENT_ROOT'] == '/web/site5/public') {
+        if ($_SERVER['DOCUMENT_ROOT'] == '/web/site2/public') {
             return 'prod';
         }
 
         return "dev";
     }
 
-    function getProdSiteDomain()
+    function getProdSiteDomain(): string
     {
         return "cent1.wonny.site";
+    }
+
+    function getProdSiteProtocol(): string
+    {
+        return "https";
+    }
+
+    function getProdSiteBaseUrl()
+    {
+        return $this->getProdSiteProtocol() . "://" . $this->getProdSiteDomain();
     }
 
     public function getDbConnectionByEnv(): \mysqli
@@ -62,7 +78,7 @@ class Application
     public function runByRequestUri(string $requestUri)
     {
         if ($requestUri == '/') {
-            jsLocationReplaceExit("/usr/article/list");
+            location302("/usr/article/list");
         }
 
         list($action) = explode('?', $requestUri);

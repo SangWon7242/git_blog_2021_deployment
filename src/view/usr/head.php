@@ -3,7 +3,7 @@ if (isset($pageTitle) == false) {
     $pageTitle = "";
 }
 
-$application = $this->getApplication();
+$application = $this->application();
 $envCode = $application->getEnvCode();
 $prodSiteDomain = $application->getProdSiteDomain();
 $isLogined = $_REQUEST['App__isLogined'];
@@ -27,14 +27,25 @@ $loginedMember = $_REQUEST['App__loginedMember'];
 
     <!-- 테일윈드 불러오기 -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-
     <!-- 데이지UI 불러오기, 테일윈드 필요 -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@1.3.2/dist/full.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="/resource/common.css">
 
     <?php if ($envCode == 'prod') { ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-94LNZ8CK0K"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-94LNZ8CK0K');
+        </script>
     <?php } ?>
 
     <?php require_once "meta.php"; ?>
