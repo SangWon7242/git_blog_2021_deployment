@@ -9,8 +9,7 @@ use App\Interceptor\NeedLogoutInterceptor;
 
 class Application
 {
-    function getTempSitemapFilePath(): string
-    {
+    function getTempSitemapFilePath(): string {
         $envCode = $this->getEnvCode();
 
         $dir = "";
@@ -21,7 +20,7 @@ class Application
             $dir = "/tmp";
         }
 
-        if (!is_dir($dir)) {
+        if ( !is_dir($dir) ) {
             mkdir($dir);
         }
 
@@ -41,16 +40,14 @@ class Application
 
     function getProdSiteDomain(): string
     {
-        return "cent1.wonny.site";
+        return "site2.cent1.oa.gg";
     }
 
-    function getProdSiteProtocol(): string
-    {
+    function getProdSiteProtocol(): string {
         return "https";
     }
 
-    function getProdSiteBaseUrl()
-    {
+    function getProdSiteBaseUrl() {
         return $this->getProdSiteProtocol() . "://" . $this->getProdSiteDomain();
     }
 
@@ -112,7 +109,7 @@ class Application
 
     private function runInterceptors(string $action)
     {
-        $run = function (Interceptor ...$interceptors) use ($action) {
+        $run = function (Interceptor...$interceptors) use ($action) {
             foreach ($interceptors as $interceptor) {
                 $interceptor->run($action);
             }

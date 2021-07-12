@@ -6,6 +6,7 @@ $pageTitle = "로그인";
 
 <section class="secion-login">
   <div class="container mx-auto">
+		<div class="con-pad">
     <form action="doLogin" method="POST">
       <div class="form-control">
           <label class="label">
@@ -29,7 +30,8 @@ $pageTitle = "로그인";
 					</div>
       </div>
     </form>
-  </div>
+	</div>
+ </div>
 </section>
 
 <?php require_once __DIR__ . "/../foot.php"; ?>
