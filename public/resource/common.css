@@ -36,3 +36,108 @@ html > body, html > body .tui-editor-contents {
 .top-bar, .bottom-bar {
   background-color: #454545;
 }
+
+body {
+  background-color: #EFE7E3;
+}
+
+.frame {
+  margin: 30px 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* aboutMe dash board */
+
+.dashboard {
+  display:flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.korean-comment {
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.sample {
+  background-color: pink;
+  -webkit-text-stroke: 1px black;
+}
+
+.sample:hover {
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+  -webkit-text-stroke: 1px black;
+}
+
+.highlight {
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
+.highlight:hover {
+  color: black;
+  background-color: pink;
+  transition: 0.3s;
+}
+
+.type1:hover {
+  background-color: yellowgreen;
+}
+
+.type2:hover {
+  background-color: skyblue;
+}
+
+.type3:hover {
+  background-color: orange;
+}
+
+.english-comment {
+  font-weight: 100;
+  font-size: 30px;
+  font-style: italic;
+   
+  letter-spacing: -0.3px;
+}
+
+/* aboutMe recent works */
+
+.recent-menu {
+  font-size: 25px;
+  font-weight: 700;
+  color: #C2B4AB;
+  
+  text-align: right; 
+  margin-top: 100px;
+}
+/* aboutMe footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contact {
+  font-size: 60px;
+  font-weight: 700px;
+  color: black;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
+}
+
+.links > a {
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.links > a:hover {
+  color: white;
+}
